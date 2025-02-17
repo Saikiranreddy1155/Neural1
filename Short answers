@@ -1,0 +1,22 @@
+1.	What patterns do you observe in the training and validation accuracy curves?
+•	Training Accuracy: The training accuracy tends to increase steadily throughout the epochs. As the model sees more examples during training, it becomes better at predicting the labels for the training data. Initially, the accuracy may increase quickly, but it can start to plateau as the model gets closer to its optimal performance.
+•	Validation Accuracy: The validation accuracy might follow a similar upward trend, but it could stop improving or even start decreasing after a certain point. This happens when the model starts to overfit — it becomes too specialized on the training data and loses its ability to generalize to unseen data (validation set).
+Common Patterns:
+•	Converging curves: If both training and validation accuracy rise and level out at similar values, this suggests the model is generalizing well and has learned to capture the underlying patterns in the data.
+•	Training accuracy much higher than validation accuracy: If the training accuracy increases rapidly while the validation accuracy increases slowly (or starts to decrease), it is a sign of overfitting.
+
+2.	How can you use TensorBoard to detect overfitting?
+Training vs. Validation Loss/Accuracy: If you notice that the training loss decreases and training accuracy increases while the validation loss increases or the validation accuracy stagnates or decreases, this indicates overfitting. The model performs well on the training data but fails to generalize to unseen data.
+Example of overfitting pattern:
+•	Training Loss: Decreases steadily
+•	Validation Loss: Starts to increase after a certain point
+•	Training Accuracy: Increases steadily
+•	Validation Accuracy: Plateaus or starts to decline
+
+3.	What happens when you increase the number of epochs?
+When you increase the number of epochs, several things can happen:
+•	Improved Training Accuracy: Initially, increasing the number of epochs allows the model to learn more and refine its weights. This generally improves the training accuracy as the model sees more examples and adapts to the data.
+•	Overfitting Risk: As training progresses, if the model has already learned most of the important patterns, additional epochs will cause it to overfit. This means that while the training accuracy may continue to improve, the validation accuracy will start to stagnate or even decline as the model starts memorizing the training data rather than generalizing. The model starts to overfit to noise or specific details of the training data that don’t generalize well to the validation set.
+•	Validation Accuracy Behavior: After a certain number of epochs, the validation accuracy may stop improving. Increasing the number of epochs beyond this point will not yield significant improvements in validation accuracy. In some cases, the model may even start to perform worse on the validation set, indicating overfitting.
+
+
